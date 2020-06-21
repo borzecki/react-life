@@ -4,8 +4,6 @@ Simple project roadmap / todo list to keep track of pending tasks and ongoing ch
 
 ### Todo
 
-- [ ] model and implement game state / reducer
-- [ ] work on implementing game change logic inside reducer
 - [ ] unit tests for reducers
 - [ ] enhance styling
 - [ ] work on components controlling game state
@@ -14,9 +12,10 @@ Simple project roadmap / todo list to keep track of pending tasks and ongoing ch
 
 ### In Progress
 
-- [ ] grid layout
+- [ ] work on implementing game change logic inside reducer
 
 ### Done ✓
 
 - [x] initialize project and sketch draft interface
 - [x] prepare grid layout for game
+- [x] model and implement game state / reducer

@@ -21,15 +21,18 @@ const GameOfLife = () => {
   const { rows, cols, active } = useSelector((state) => state);
 
   return (
-    <Wrapper cols={cols}>
-      {[...Array(rows * cols).keys()].map((i) => (
-        <Cell
-          key={i}
-          isActive={active.indexOf(i) > -1}
-          onClick={() => dispatch({ type: "toggle", id: i })}
-        />
-      ))}
-    </Wrapper>
+    <>
+      <button onClick={() => dispatch({ type: "tick" })}>tick</button>
+      <Wrapper cols={cols}>
+        {[...Array(rows * cols).keys()].map((i) => (
+          <Cell
+            key={i}
+            isActive={active.indexOf(i) > -1}
+            onClick={() => dispatch({ type: "toggle", id: i })}
+          />
+        ))}
+      </Wrapper>
+    </>
   );
 };
 
