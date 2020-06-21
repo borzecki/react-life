@@ -33,7 +33,7 @@ const activeNeighbours = (neighbours, active) =>
   neighbours.filter((n) => isActive(n, active)).length;
 
 export const nextGeneration = ({ active, rows, cols }) => {
-  const result = Object.assign([], active);
+  const result = active.slice(0);
 
   coords(rows, cols).forEach(([i, j]) => {
     const id = i * cols + j;
@@ -54,5 +54,5 @@ export const nextGeneration = ({ active, rows, cols }) => {
 export const randomize = (count) =>
   filter(
     identity,
-    times((i) => (Math.random() > 0.8 ? i : false), count)
+    times((i) => (Math.random() > 0.7 ? i : false), count)
   );

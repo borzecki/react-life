@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
-import Controls from "./Controls";
-import LifeGrid from "./LifeGrid";
-import useWindowSize from "../hooks/useWindowSize";
 import { useSelector, useDispatch } from "react-redux";
 
+import Controls from "./Controls";
+import LifeGrid from "./LifeGrid";
+
+import useWindowSize from "../hooks/useWindowSize";
 import { defaultDimensions, mobileDimensions } from "../reducer";
 import { toggle, resize } from "../actions";
 
