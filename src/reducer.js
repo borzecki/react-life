@@ -1,4 +1,4 @@
-import { range, xprod } from "ramda";
+import { range, xprod, mergeRight } from "ramda";
 
 const directions = [
   [-1, -1],
@@ -51,19 +51,17 @@ const nextGeneration = ({ active, rows, cols }) => {
   return result;
 };
 
-const initialState = { rows: 10, cols: 20, active: [] };
+export const initialState = { rows: 10, cols: 20, active: [] };
 
-const reducer = (state = initialState, action) => {
+export default (state = initialState, action) => {
   switch (action.type) {
     case "resize": // update game dimensions
-      return { ...state, rows: action.rows, cols: action.cols };
+      return mergeRight(state, { rows: action.rows, cols: action.cols });
     case "toggle": // change state of individual cell
-      return { ...state, active: toggleItem(action.id, state.active) };
+      return mergeRight(state, { active: toggleItem(action.id, state.active) });
     case "tick": // calculate next state of the game
-      return { ...state, active: nextGeneration(state) };
+      return mergeRight(state, { active: nextGeneration(state) });
     default:
       return state;
   }
 };
-
-export default reducer;

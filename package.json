@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "react-scripts start"
+    "start": "react-scripts start",
+    "test:dev": "jest --watchAll --coverage",
+    "test": "jest --coverage"
   },
   "dependencies": {
     "ramda": "^0.27.0",
@@ -14,6 +16,11 @@
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/preset-react": "^7.10.1",
+    "babel-jest": "^26.0.1",
+    "jest": "^26.0.1",
     "react-scripts": "^3.4.1"
   },
   "browserslist": {
