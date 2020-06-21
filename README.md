@@ -1,16 +1,22 @@
+<p align="center">
+  <img src="public/glider.png" alt="Glider logo"/>
+</p>
 
 # Game of Life
 
-> Archlet fullstack developer coding challenge.
+The **Game of Life**, also known simply as **Life**, is a cellular automaton devised by the British mathematician John Horton Conway in 1970. It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves. It is Turing complete and can simulate a universal constructor or any other Turing machine.
 
-## The Challenge
+## Rules
 
-Write a simple version of the [game of life](https://en.wikipedia.org/wiki/Conway's_Game_of_Life) with the stack ES6+JSX, React and Redux.
+The life cellular automaton is run by placing a number of filled cells on a two-dimensional grid. Each generation then switches cells on or off depending on the state of the cells that surround it. The rules are defined as follows. All eight of the cells surrounding the current one are checked to see if they are on or not. Any cells that are on are counted, and this count is then used to determine what will happen to the current cell.
 
-This challenge should take you a couple of hours and your are free to choose which feature to implement. There is no time pressure. Just notify us by email when you are done.
+1. Death: if the count is less than 2 or greater than 3, the current cell is switched off.
 
-We are going to look at your code in terms of simplicity, structure and style. This includes how the commits are structured and what the commit message style looks like.
+2. Survival: if (a) the count is exactly 2, or (b) the count is exactly 3 and the current cell is on, the current cell is left unchanged.
 
-Please also write an imaginary todo list in this repository of what could be changed or added in the future.
+3. Birth: if the current cell is off and the count is exactly 3, the current cell is switched on.
 
-If you want to, then you could also implement unit tests and try to make it as performant as possible - fancy optimization tricks - let your mind free.
+## Materials
+
+- https://www.conwaylife.com/
+- https://mathworld.wolfram.com/GameofLife.html
