@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { useSelector, useDispatch } from "react-redux";
-import { toggle } from "../actions";
+import { useSelector } from "react-redux";
 
 const Wrapper = styled.div`
   display: grid;
@@ -11,9 +10,9 @@ const Wrapper = styled.div`
 
 const StyledCell = styled.div`
   border: 1px solid #0003;
-  margin: 1px;
+  margin: 0.5px;
+  cursor: pointer;
 
-  padding: 0.1rem;
   display: grid;
   place-items: center;
 
@@ -38,16 +37,11 @@ const Cell = ({ id, onClick }) => {
   return <StyledCell isActive={isActive} onClick={() => onClick(id)} />;
 };
 
-const LifeGrid = () => {
-  const dispatch = useDispatch();
-  const rows = useSelector((state) => state.rows);
-  const cols = useSelector((state) => state.cols);
-  const onClick = (i) => dispatch(toggle(i));
-
+const LifeGrid = ({ cols, rows, toggleCell }) => {
   return (
     <Wrapper cols={cols}>
       {[...Array(rows * cols).keys()].map((i) => (
-        <Cell key={i} id={i} onClick={onClick} />
+        <Cell key={i} id={i} onClick={toggleCell} />
       ))}
     </Wrapper>
   );

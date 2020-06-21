@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
+
 import { tick, randomize } from "../actions";
+import useInterval from "../hooks/useInterval";
 
 const ControlContainer = styled.div`
   margin: 5% 0 5% 5%;
@@ -16,7 +18,11 @@ const Button = styled.button`
   height: 2em;
   font-size: 1em;
   margin: 0.5em;
-  width: 10em;
+  cursor: pointer;
+
+  @media (min-width: 768px) {
+    width: 15em;
+  }
 
   @media (hover: hover) and (pointer: fine) {
     :hover {
@@ -30,13 +36,10 @@ const Button = styled.button`
 const Controls = () => {
   const [play, setPlay] = useState(false);
   const dispatch = useDispatch();
-  const sendTick = () => dispatch({ type: "tick" });
-  useEffect(() => {
-    if (play) {
-      const interval = setInterval(sendTick, 200);
-      return () => clearInterval(interval);
-    }
-  });
+  const sendTick = () => dispatch(tick());
+
+  // send tick every 100ms if play is active
+  useInterval(sendTick, play ? 100 : null);
 
   return (
     <ControlContainer>

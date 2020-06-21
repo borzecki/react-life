@@ -11,9 +11,9 @@ describe("reducer tests", () => {
   });
 
   it("handles resize action", () => {
-    expect(reducer(initialState, resize(10, 10))).toEqual({
+    expect(reducer(initialState, resize({ cols: 20, rows: 10 }))).toEqual({
       rows: 10,
-      cols: 10,
+      cols: 20,
       active: [],
     });
   });

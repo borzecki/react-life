@@ -1,7 +1,10 @@
 import { mergeRight } from "ramda";
 import { randomize, nextGeneration, toggleItem } from "./utils";
 
-export const initialState = { rows: 30, cols: 70, active: [] };
+export const mobileDimensions = { rows: 40, cols: 30 };
+export const defaultDimensions = { rows: 30, cols: 70 };
+
+export const initialState = { ...defaultDimensions, active: [] };
 
 export default (state = initialState, action) => {
   switch (action.type) {
