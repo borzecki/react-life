@@ -4,11 +4,16 @@ Simple project roadmap / todo list to keep track of pending tasks and ongoing ch
 
 ### Todo
 
-- [ ] deploy to github pages
+- [ ] create control for life cycle interval
+- [ ] create controls for grid size
+- [ ] introduce dynamic rules ( min/max neighbours )
+- [ ] include information of cells "age" and stylize it on grid
+- [ ] include cypress or enzyme tests for rendering components
+- [ ] enhance readme with examples and history of game of life
 
 ### In Progress
 
-- [ ] ensure responsiveness on mobile devices
+- [ ] deploy to github pages
 
 ### Done ✓
 
@@ -19,3 +24,4 @@ Simple project roadmap / todo list to keep track of pending tasks and ongoing ch
 - [x] unit tests for reducers
 - [x] work on components controlling game state
 - [x] enhance styling
+- [x] ensure responsiveness on mobile devices
