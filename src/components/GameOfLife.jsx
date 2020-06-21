@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
-import { toggle, tick } from "../actions";
+import { toggle } from "../actions";
+import Controls from "./Controls";
 
 const Wrapper = styled.div`
   display: grid;
@@ -23,7 +24,7 @@ const GameOfLife = () => {
 
   return (
     <>
-      <button onClick={() => dispatch(tick())}>tick</button>
+      <Controls />
       <Wrapper cols={cols}>
         {[...Array(rows * cols).keys()].map((i) => (
           <Cell
