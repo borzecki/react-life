@@ -31,6 +31,8 @@ const Button = styled.button`
   }
 
   ${({ isActive }) => isActive && `background: #ee6c4d; color: #fff`};
+  ${({ disabled }) =>
+    disabled && `background: #dedbd2; color: #fff; cursor: not-allowed;`};
 `;
 
 const Controls = () => {
@@ -43,7 +45,9 @@ const Controls = () => {
 
   return (
     <ControlContainer>
-      <Button onClick={() => dispatch(tick())}>tick</Button>
+      <Button disabled={play} onClick={() => dispatch(tick())}>
+        tick
+      </Button>
       <Button isActive={play} onClick={() => setPlay(!play)}>
         {play ? "pause" : "play"}
       </Button>
