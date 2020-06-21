@@ -1,6 +1,8 @@
 <p align="center">
-  <img src="public/glider.png" alt="Glider logo"/>
+  <a href="https://borzecki.github.io/react-life/"><img src="public/glider.png" alt="Glider logo"/></a>
 </p>
+
+Demo available [here](https://borzecki.github.io/react-life/).
 
 # Game of Life
 
