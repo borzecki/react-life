@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
-import { tick } from "../actions";
+import { tick, randomize } from "../actions";
 
 const Button = styled.button`
   background: transparent;
@@ -29,6 +29,7 @@ const Controls = () => {
       <Button active={play} onClick={() => setPlay(!play)}>
         {play ? "pause" : "play"}
       </Button>
+      <Button onClick={() => dispatch(randomize())}>randomize</Button>
     </>
   );
 };
