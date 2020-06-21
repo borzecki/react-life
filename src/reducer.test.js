@@ -4,8 +4,8 @@ import { toggle, resize, tick } from "./actions";
 describe("reducer tests", () => {
   it("handles init action", () => {
     expect(reducer(undefined, {})).toEqual({
-      rows: 10,
-      cols: 20,
+      rows: 30,
+      cols: 70,
       active: [],
     });
   });

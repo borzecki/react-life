@@ -4,13 +4,11 @@ Simple project roadmap / todo list to keep track of pending tasks and ongoing ch
 
 ### Todo
 
-- [ ] enhance styling
-- [ ] ensure responsiveness on mobile devices
 - [ ] deploy to github pages
 
 ### In Progress
 
-- [ ] work on components controlling game state
+- [ ] ensure responsiveness on mobile devices
 
 ### Done ✓
 
@@ -19,3 +17,5 @@ Simple project roadmap / todo list to keep track of pending tasks and ongoing ch
 - [x] model and implement game state / reducer
 - [x] work on implementing game change logic inside reducer
 - [x] unit tests for reducers
+- [x] work on components controlling game state
+- [x] enhance styling
